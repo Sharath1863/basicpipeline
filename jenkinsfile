@@ -1,0 +1,25 @@
+pipeline {
+    agent any  // Runs on any available agent
+    stages {
+        stage('Build') { // Step 1: Build stage
+            steps {
+                echo 'Building the project...'  // Simple output statement
+            }
+        }
+        stage('Test') {  // Step 2: Test stage
+            steps {
+                echo 'Running tests...'  // Another output statement
+            }
+        }
+        stage('Deploy') { // Step 3: Deploy stage
+            steps {
+                echo 'Deploying the project...'  // Output statement for deployment
+            }
+        }
+    }
+    post {
+        always {
+            echo 'Pipeline execution complete.'  // Prints message after the pipeline finishes
+        }
+    }
+}
